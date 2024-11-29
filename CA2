@@ -1,7 +1,7 @@
 install.packages("tidyverse")
 library(tidyverse)
 
-advertisers <- read_csv("advertiser.csv")
+advertiser <- read_csv("advertiser.csv")
 campaigns <- read_csv("campaigns.csv")
 clicks <- read_tsv("clicks.tsv")
 impressions <- read_tsv("impressions.tsv")
