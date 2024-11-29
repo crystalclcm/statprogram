@@ -1,3 +1,14 @@
+install.packages("tidyverse")
+library(tidyverse)
+
+advertisers <- read_csv("advertiser.csv")
+campaigns <- read_csv("campaigns.csv")
+clicks <- read_tsv("clicks.tsv")
+impressions <- read_tsv("impressions.tsv")
+
+# Function to convert date and time to UTC based on timezone
+convert_to_utc <- function(data) {
+
 # Loop through each row of the dataset and apply the conversion
   for (i in 1:nrow(data)) {
     date <- data$date[i]
@@ -95,10 +106,10 @@ colnames(campaigns)[colnames(campaigns) == "name"] <- "campaign_name"
 
 # Rename columns in the advertisers dataset for consistency
 # Change 'id' to 'advertiser_id'
-colnames(advertisers)[colnames(advertisers) == "id"] <- "advertiser_id"
+colnames(advertiser)[colnames(advertiser) == "ID"] <- "advertiser_id"
 
 # Change 'name' to 'advertiser_name'
-colnames(advertisers)[colnames(advertisers) == "name"] <- "advertiser_name"
+colnames(advertiser)[colnames(advertiser) == "name"] <- "advertiser_name"
 
 
 
